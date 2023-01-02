@@ -1,0 +1,114 @@
+<main id="main" class="main">
+    <div class="pagetitle">
+        <h1>Project Table</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+                <li class="breadcrumb-item">Projects</li>
+                <li class="breadcrumb-item active">Table</li>
+            </ol>
+        </nav>
+    </div>
+    <div class="pageItems">
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a routerLink="/project">Project</a>
+                </li>
+                <li class="breadcrumb-item ">
+                    <a routerLink="/project/board">Board</a>
+                </li>
+
+                <li class="breadcrumb-item active">
+                    <a routerLink="/project/table" >Table</a>
+                </li>
+                <li class="breadcrumb-item ">
+                    <a routerLink="/project/summary">Dashboard </a>
+                </li>
+
+            </ol>
+        </nav>
+    </div>
+    <section class="section dashboard">
+        <div class="row">
+            <div class="col-lg-12">
+                                <div class="row">
+                    <div class="col-12">
+                        <div class="card recent-sales overflow-auto">
+                            <div class="filter">
+                                <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                                    <li class="dropdown-header text-start">
+                                        <h6>Filter</h6>
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">Today</a></li>
+                                    <li><a class="dropdown-item" href="#">This Month</a></li>
+                                    <li><a class="dropdown-item" href="#">This Year</a></li>
+                                </ul>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Task Summary</h5>
+                                <table class="table table-borderless datatable table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">S no</th>
+                                            <th scope="col">Tasks</th>
+                                            <th scope="col">Assigned To</th>
+                                            <th scope="col">Start Date </th>
+                                            <th scope="col">Due Date</th>
+                                            <th scope="col">Priority</th>
+                                            <th scope="col">Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr >
+                                            <th scope="row"><a href="#">1</a></th>
+                                            <td>Create Login Page</td>
+                                            <td>Kumar (ui Developer)</td>
+                                            <td>jan 2nd 2022</td>
+                                            <td>jan 3nd 2022</td>
+                                            <td >
+                                                <span class="px-4 py-2 bg-danger text-white">
+                                                    High
+                                                </span>
+                                            </td>
+                                            <td><span class="badge bg-primary py-2 px-4" style="border-radius: 15px;">In Progress</span></td>
+                                        </tr>
+                                        <tr >
+                                            <th scope="row"> 2 </th>
+                                            <td>Create dashboard</td>
+                                            <td>Anil (ui Developer)</td>
+                                            <td>jan 2nd 2022</td>
+                                            <td>jan 5nd 2022</td>
+                                            <td >
+                                                <span class="px-4 py-2 bg-warning text-white">
+                                                    Medium
+                                                </span>
+                                            </td>
+                                            <td><span class="badge bg-primary py-2 px-4" style="border-radius: 15px;">In Progress</span></td>
+                                        </tr>
+                                        <tr >
+                                            <th scope="row">3</th>
+                                            <td>Test all Pages</td>
+                                            <td>Jagadeesh (tester)</td>
+                                            <td>jan 2nd 2022</td>
+                                            <td>jan 10th 2022</td>
+                                            <td >
+                                                <span class="px-4 py-2 bg-primary text-white">
+                                                    Low
+                                                </span>
+                                            </td>
+                                            <td><span class="badge bg-danger py-2 px-4" style="border-radius: 15px;">Not Yet Stated</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+</main>

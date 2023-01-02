@@ -1,5 +1,5 @@
 {
-  "name": "admindashboard",
+  "name": "projectmanagement",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -36,5 +36,17 @@
     "karma-jasmine-html-reporter": "~1.7.0",
     "tslib": "^2.4.1",
     "typescript": "~4.7.2"
-  }
+  },
+  "description": "This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.3.",
+  "main": "karma.conf.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Anilkumar0143/projectmanagement.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Anilkumar0143/projectmanagement/issues"
+  },
+  "homepage": "https://github.com/Anilkumar0143/projectmanagement#readme"
 }

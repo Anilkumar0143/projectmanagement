@@ -1,0 +1,126 @@
+<h5 class="card-title text-center">New Project</h5>
+<form class="row g-3">
+    <fieldset *ngIf="currentStep === 1">
+        <div class="projectdetails">
+            <h5 class="card-title">Project Details</h5>
+
+            <div class="row my-3">
+                <div class="col-6"> <label for="projectName" class="form-label">Choose a name</label>
+                    <input type="text" class="form-control" id="projectName" placeholder="Give your project a name">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputState" class="form-label">Choose a Company</label>
+                    <select id="inputState" class="form-select">
+                        <option selected>Choose...</option>
+                        <option>A</option>
+                        <option>B</option>
+                        <option>C</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-12">
+                <label for="description" class="form-label">Add Description</label>
+                <textarea id="description" placeholder="Add Description here..." class="form-control"
+                    rows="4"> </textarea>
+            </div>
+        </div>
+        <div class="text-center form-group d-flex justify-content-between my-4">
+            <div class="justify-content-start">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            </div>
+            <div class="justify-content-end">
+                <button type="button" class="btn btn-primary mx-2" (click)="next()">Next</button>
+
+            </div>
+        </div>
+    </fieldset>
+
+    <!-- Team -->
+    <fieldset *ngIf="currentStep === 2">
+        <div class="assignTeam  " *ngIf="toggleaddperson">
+            <h5 class="card-title">Team</h5>
+            <div id="SelectEmp">
+                <label for="inputStateEmp" class="form-label">Choose an Employee</label>
+                <select id="inputStateEmp" class="form-select">
+                    <option selected>Choose...</option>
+                    <option>Ram</option>
+                    <option>Kumar</option>
+                    <option>Anil</option>
+                    <option>Krishna</option>
+                    <option>Vara</option>
+                </select>
+            </div>
+            <div class="row">
+                <div id="empList" class="my-4 col-6">
+                    <h5>Assidned Employee's List</h5>
+                    <hr class="w-25">
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="nameAnil" value="Anil" checked>
+                        <label class="form-check-label" for="nameAnil">Anil</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="nameRam" value="Ram" checked>
+                        <label class="form-check-label" for="nameRam">Ram</label>
+                    </div>
+                </div>
+                <div id="teamList" class="my-4 col-6">
+                    <h5>Assigned Team List</h5>
+                    <hr class="w-25">
+                    No Team
+                </div>
+            </div>
+
+            <!-- <div class="col-md-6">
+                <label for="inputEmail5" class="form-label">Email</label>
+                <input type="email" class="form-control" id="inputEmail5">
+            </div>
+            <div class="col-md-6"> 
+                <label for="inputPassword5" class="form-label">Password</label>
+                <input type="password" class="form-control" id="inputPassword5">
+            </div> -->
+
+        </div>
+        <div class="text-center form-group d-flex justify-content-between my-4">
+            <div class="justify-content-start">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            </div>
+            <div class="justify-content-end">
+                <button type="button" class="btn btn-secondary mx-2" (click)="previous()">Previous</button>
+                <button type="button" class="btn btn-primary mx-2" (click)="next()">Next</button>
+
+            </div>
+        </div>
+    </fieldset>
+
+    <!-- Advanced Options -->
+    <fieldset *ngIf="currentStep === 3">
+        <div class="advancedOptions">
+            <h5 class="card-title">Advanced Options</h5>
+
+            <div id="selectCat">
+                <label for="inputCategory" class="form-label">Add Category for a Project</label>
+                <select id="inputCategory" class="form-select">
+                    <option selected>Choose Category</option>
+                    <option>A</option>
+                    <option>B</option>
+                    <option>C</option>
+                    <option>D</option>
+                    <option>E</option>
+                </select>
+            </div>
+            <div class="tagProject my-4">
+                <label for="addproject" class="form-label">Tag a project</label>
+                <input type="text" class="form-control border-bottom" id="addproject" placeholder="+ Add Tag">
+            </div>
+        </div>
+        <div class="text-center form-group d-flex justify-content-between my-4">
+            <div class="justify-content-start">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            </div>
+            <div class="justify-content-end">
+                <button type="button" class="btn btn-secondary mx-2" (click)="previous()">Previous</button>
+                <button type="submit" class="btn btn-primary mx-2">Submit</button>
+            </div>
+        </div>
+    </fieldset>
+</form>
