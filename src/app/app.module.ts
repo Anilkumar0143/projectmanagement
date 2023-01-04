@@ -47,6 +47,9 @@ import { ProjectTableComponent } from './pages/project-table/project-table.compo
 import { ProjectBoardComponent } from './pages/project-board/project-board.component';
 import { ProjectsTableComponent } from './pages/projects-table/projects-table.component';
 import { ProjectsSummaryComponent } from './pages/projects-summary/projects-summary.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -98,7 +101,11 @@ import { ProjectsSummaryComponent } from './pages/projects-summary/projects-summ
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    DragDropModule,
+    HttpClientModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

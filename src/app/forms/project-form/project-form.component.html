@@ -1,16 +1,16 @@
 <h5 class="card-title text-center">New Project</h5>
-<form class="row g-3">
-    <fieldset *ngIf="currentStep === 1">
+<form class="row g-3" [formGroup]="projectForm" (ngSubmit)="onSavevalue( )">
+     <fieldset *ngIf="currentStep === 1"  formGroupName="fieldset1">
         <div class="projectdetails">
             <h5 class="card-title">Project Details</h5>
 
             <div class="row my-3">
                 <div class="col-6"> <label for="projectName" class="form-label">Choose a name</label>
-                    <input type="text" class="form-control" id="projectName" placeholder="Give your project a name">
+                    <input type="text" class="form-control" id="projectName" formControlName="projectTitle" placeholder="Give your project a name" required >
                 </div>
                 <div class="col-md-6">
-                    <label for="inputState" class="form-label">Choose a Company</label>
-                    <select id="inputState" class="form-select">
+                    <label for="inputStateCompany" class="form-label">Choose a Company</label>
+                    <select id="inputStateCompany" class="form-select" required formControlName="inputStateCompany" >
                         <option selected>Choose...</option>
                         <option>A</option>
                         <option>B</option>
@@ -21,7 +21,7 @@
             <div class="col-12">
                 <label for="description" class="form-label">Add Description</label>
                 <textarea id="description" placeholder="Add Description here..." class="form-control"
-                    rows="4"> </textarea>
+                    rows="4" formControlName="projectdescription"> </textarea>
             </div>
         </div>
         <div class="text-center form-group d-flex justify-content-between my-4">
@@ -36,18 +36,17 @@
     </fieldset>
 
     <!-- Team -->
-    <fieldset *ngIf="currentStep === 2">
-        <div class="assignTeam  " *ngIf="toggleaddperson">
+      <fieldset *ngIf="currentStep === 2">
+        <div class="assignTeam  " *ngIf="toggleaddperson" formGroupName="fieldset2">
             <h5 class="card-title">Team</h5>
             <div id="SelectEmp">
                 <label for="inputStateEmp" class="form-label">Choose an Employee</label>
-                <select id="inputStateEmp" class="form-select">
+                <select id="inputStateEmp" class="form-select" required formControlName="inputStateEmp">
                     <option selected>Choose...</option>
-                    <option>Ram</option>
-                    <option>Kumar</option>
-                    <option>Anil</option>
-                    <option>Krishna</option>
-                    <option>Vara</option>
+                    <option value="Ram">Ram</option>
+                    <option value="Kumar">Kumar</option>
+                    <option value="Anil">Anil</option>
+                    <option value="Krishna">Krishna</option>
                 </select>
             </div>
             <div class="row">
@@ -59,7 +58,7 @@
                         <label class="form-check-label" for="nameAnil">Anil</label>
                     </div>
                     <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="nameRam" value="Ram" checked>
+                        <input type="checkbox" class="form-check-input" id="nameRam" value="Ram">
                         <label class="form-check-label" for="nameRam">Ram</label>
                     </div>
                 </div>
@@ -70,14 +69,7 @@
                 </div>
             </div>
 
-            <!-- <div class="col-md-6">
-                <label for="inputEmail5" class="form-label">Email</label>
-                <input type="email" class="form-control" id="inputEmail5">
-            </div>
-            <div class="col-md-6"> 
-                <label for="inputPassword5" class="form-label">Password</label>
-                <input type="password" class="form-control" id="inputPassword5">
-            </div> -->
+           
 
         </div>
         <div class="text-center form-group d-flex justify-content-between my-4">
@@ -91,15 +83,23 @@
             </div>
         </div>
     </fieldset>
-
     <!-- Advanced Options -->
-    <fieldset *ngIf="currentStep === 3">
+    <fieldset *ngIf="currentStep === 3" formGroupName="fieldset3">
         <div class="advancedOptions">
             <h5 class="card-title">Advanced Options</h5>
-
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="inputdate5" class="form-label">Due Date</label>
+                    <input type="date" class="form-control" id="inputdate5" required formControlName="duedate">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputprojectType" class="form-label">Project Type</label>
+                    <input type="text" class="form-control" id="inputprojectType" formControlName="inputprojectType" required >
+                </div>
+            </div>
             <div id="selectCat">
-                <label for="inputCategory" class="form-label">Add Category for a Project</label>
-                <select id="inputCategory" class="form-select">
+                <label for="projectCategory" class="form-label">Add Category for a Project</label>
+                <select id="projectCategory" class="form-select" formControlName="projectCategory">
                     <option selected>Choose Category</option>
                     <option>A</option>
                     <option>B</option>
@@ -110,7 +110,8 @@
             </div>
             <div class="tagProject my-4">
                 <label for="addproject" class="form-label">Tag a project</label>
-                <input type="text" class="form-control border-bottom" id="addproject" placeholder="+ Add Tag">
+                <input type="text" class="form-control border-bottom" id="tagproject" name="tagproject"
+                    placeholder="+ Add Tag" formControlName="tagproject">
             </div>
         </div>
         <div class="text-center form-group d-flex justify-content-between my-4">
@@ -119,7 +120,7 @@
             </div>
             <div class="justify-content-end">
                 <button type="button" class="btn btn-secondary mx-2" (click)="previous()">Previous</button>
-                <button type="submit" class="btn btn-primary mx-2">Submit</button>
+                <button type="submit"(click)="reload()" class="btn btn-primary mx-2" data-bs-dismiss="modal">Submit</button>
             </div>
         </div>
     </fieldset>
