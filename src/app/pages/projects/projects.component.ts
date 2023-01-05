@@ -10,7 +10,7 @@ export class ProjectsComponent implements OnInit {
 
   projects: any;
  // url = 'http://localhost:3000/projects';
-   url = 'https://projectmanagementdb1.vercel.app/';
+   url = 'https://pmbackend.vercel.app/';
 
   constructor(private http: HttpClient) { }
 
