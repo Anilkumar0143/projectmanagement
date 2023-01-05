@@ -9,7 +9,7 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 export class ProjectFormComponent implements OnInit {
   toggleaddperson: boolean = true;
  // url = 'http://localhost:3000/project';
-    url = 'https://pmbackend.vercel.app/';
+    url = 'https://pmbackend.vercel.app/project';
 
   projectForm!: FormGroup;
 
