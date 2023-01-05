@@ -9,7 +9,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class ProjectsComponent implements OnInit {
 
   projects: any;
-  url = 'http://localhost:3000/projects';
+ // url = 'http://localhost:3000/projects';
+   url = 'https://projectmanagementdb1.vercel.app/';
 
   constructor(private http: HttpClient) { }
 
